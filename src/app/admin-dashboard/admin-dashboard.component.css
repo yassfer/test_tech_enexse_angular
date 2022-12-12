@@ -1,0 +1,36 @@
+.container {
+    margin-top: 5em;
+}
+
+.card {
+    margin-top: 3em;
+    height: 10em;
+}
+
+.card-title {
+    font-size: 0.78em;
+}
+
+.card-text {
+    size: 10px;
+}
+
+.total {
+    color: rgb(0, 107, 180);
+}
+
+.active {
+    color: rgb(0, 120, 113);
+}
+
+.disconnected {
+    color: rgb(189, 39, 30);
+}
+
+.pending {
+    color: rgb(254, 197, 20);
+}
+
+.never_connected {
+    color: rgb(100, 106, 119);
+}

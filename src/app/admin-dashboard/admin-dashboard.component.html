@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col align-self-start">
+            <p class="font-weight-light">Hello admin,</p>
+            <p class="font-weight-light">View the status of your agents and the evolution of their latest alerts</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col align-self-start">
+            <h3>Installed agents by their status</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                <div class="card-body text-center">
+                    <p class="card-title text-muted">Total agents</p>
+                    <h2 class="card-text total">{{ agentView?.totalAgent }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col" *ngFor="let item of agentView?.agentStatus | keyvalue">
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                <div class="card-body text-center">
+                    <p class="card-title text-muted">{{item.key | titlecase}} Agents</p>
+                    <div *ngIf="item.key === enum.active" class=" card-text active">
+                        <h2>{{item.value}}</h2>
+                    </div>
+                    <div *ngIf="item.key === enum.disconnected" class="card-text disconnected">
+                        <h2>{{item.value}}</h2>
+                    </div>
+                    <div *ngIf="item.key === enum.pending" class="card-text pending">
+                        <h2>{{item.value}}</h2>
+                    </div>
+                    <div *ngIf="item.key === enum.never_connected" class="card-text never_connected">
+                        <h2>{{item.value}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
